@@ -1,0 +1,14 @@
+.banner{
+    min-height: 100vh;
+    background: url("https://images.unsplash.com/photo-1495389047458-1e01efc9d476?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2046&q=80");
+
+    h1{
+        font-size: 4.375rem;
+        @media (max-width: 95.3125em){
+            font-size: 4.375rem;
+        }
+        @media (max-width: 56.25em){
+            font-size: 9vw;
+        }
+    }
+}
