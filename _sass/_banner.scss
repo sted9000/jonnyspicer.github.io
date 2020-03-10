@@ -1,14 +1,90 @@
-.banner{
+.banner {
     min-height: 100vh;
-    background: url("https://images.unsplash.com/photo-1495389047458-1e01efc9d476?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2046&q=80");
+    position: relative;
 
-    h1{
-        font-size: 4.375rem;
-        @media (max-width: 95.3125em){
+    .banner-content {
+        position: relative;
+        padding: 0 80px;
+
+        h1 {
+            color: white;
             font-size: 4.375rem;
+            -webkit-animation: animateToLeft .5s cubic-bezier(0.2, 0.6, 0.2, 1);
+            -moz-animation: animateToLeft .5s cubic-bezier(0.2, 0.6, 0.2, 1);
+            animation: animateToLeft 0.5s cubic-bezier(.59, .01, .28, 1);
+            -webkit-animation-fill-mode: backwards;
+            -moz-animation-fill-mode: backwards;
+            animation-fill-mode: backwards;
+            position: relative;
+
+            @media (max-width: 95.3125em) {
+                font-size: 4.375rem;
+            }
+
+            @media (max-width: 56.25em) {
+                font-size: 9vw;
+            }
         }
-        @media (max-width: 56.25em){
-            font-size: 9vw;
+
+        i {
+            display: block;
+            text-align: right;
+            color: white;
+            -webkit-animation: animateToRight .5s cubic-bezier(0.2, 0.6, 0.2, 1);
+            -moz-animation: animateToRight .5s cubic-bezier(0.2, 0.6, 0.2, 1);
+            animation: animateToRight 0.5s cubic-bezier(.59, .01, .28, 1);
+            -webkit-animation-fill-mode: backwards;
+            -moz-animation-fill-mode: backwards;
+            animation-fill-mode: backwards;
+            -webkit-animation-delay: .3s;
+            animation-delay: .3s;
+            position: relative;
+        }
+    }
+
+    .banner-background {
+        background-image: url("https://images.unsplash.com/photo-1495389047458-1e01efc9d476?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2046&q=80");
+        width: 100%;
+        min-height: 100vh;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+
+        &:before {
+            position: absolute;
+            content: "";
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            background-color: black;
+            opacity: 0.7;
+        }
+    }
+
+    @keyframes animateToLeft {
+        0% {
+            opacity: 0;
+            transform: translateX(-200px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateX(0%);
+        }
+    }
+
+    @keyframes animateToRight {
+        0% {
+            opacity: 0;
+            transform: translateX(200px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateX(0%);
         }
     }
 }
