@@ -1,5 +1,8 @@
 header {
-  background-color: $color_light_blue;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 11;
 
   .mobile-header {
     height: 52px;
@@ -99,7 +102,7 @@ header {
         color: $color_white;
         font-size: 16px;
         line-height: 50px;
-        padding: 0;
+        padding: 0 20px;
         margin: 0;
       }
 

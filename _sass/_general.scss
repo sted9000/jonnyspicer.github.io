@@ -8,6 +8,10 @@ body{
   flex-direction: column;
 }
 
+section{
+  padding: 40px 0;
+}
+
 h1, h2{
   font-family: $font-stack-header;
   color: $color_black;
@@ -54,8 +58,8 @@ a{
 
 p, span{
   padding: 10px 0;
-  font-size: 18px;
-  line-height: 1.4;
+  font-size: 20px;
+  line-height: 2;
   &:first-of-type{
     padding: 0;
   }

@@ -6,40 +6,76 @@
         position: relative;
         padding: 0 80px;
 
-        h1 {
-            color: white;
-            font-size: 4.375rem;
-            -webkit-animation: animateToLeft .5s cubic-bezier(0.2, 0.6, 0.2, 1);
-            -moz-animation: animateToLeft .5s cubic-bezier(0.2, 0.6, 0.2, 1);
-            animation: animateToLeft 0.5s cubic-bezier(.59, .01, .28, 1);
-            -webkit-animation-fill-mode: backwards;
-            -moz-animation-fill-mode: backwards;
-            animation-fill-mode: backwards;
-            position: relative;
+        .header-wrapper {
+            position: absolute;
+            top: 40vh;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
 
-            @media (max-width: 95.3125em) {
-                font-size: 4.375rem;
+            h1 {
+                position: relative;
+                height: 4.375rem;
+
+                span {
+                    color: white;
+                    font-size: 4.375rem;
+
+
+                    @media (max-width: 95.3125em) {
+                        font-size: 4.375rem;
+                    }
+
+                    @media (max-width: 56.25em) {
+                        font-size: 9vw;
+                    }
+
+                    &.slash {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        // transform: translate(-50%, -50%) rotate(24deg) scaleY(0);
+                        transform: translate(-50%, -50%) rotate(24deg) scaleY(1);
+                        transform-origin: center center;
+                        width: 0.15rem;
+                        height: 145%;
+                        background: white;
+                        z-index: 4;
+                        animation: slash 3s ease-in;
+                    }
+
+                    &.text-left {
+                        position: absolute;
+
+                        left: 50%;
+
+                        top: -60px;
+
+                        transform: translateX(-190px);
+                    }
+
+                    &.text-right {
+                        position: absolute;
+
+                        right: 50%;
+
+                        transform: translateX(230px);
+
+                        top: -15px;
+                    }
+                }
             }
 
-            @media (max-width: 56.25em) {
-                font-size: 9vw;
+            i {
+                display: block;
+                color: white;
+                position: absolute;
+                top: 10rem;
+                left: 50%;
+                transform: translateX(-50%);
             }
         }
 
-        i {
-            display: block;
-            text-align: right;
-            color: white;
-            -webkit-animation: animateToRight .5s cubic-bezier(0.2, 0.6, 0.2, 1);
-            -moz-animation: animateToRight .5s cubic-bezier(0.2, 0.6, 0.2, 1);
-            animation: animateToRight 0.5s cubic-bezier(.59, .01, .28, 1);
-            -webkit-animation-fill-mode: backwards;
-            -moz-animation-fill-mode: backwards;
-            animation-fill-mode: backwards;
-            -webkit-animation-delay: .3s;
-            animation-delay: .3s;
-            position: relative;
-        }
     }
 
     .banner-background {
@@ -51,6 +87,12 @@
         right: 0;
         left: 0;
         bottom: 0;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: grayscale(1);
+        background-color: black;
 
         &:before {
             position: absolute;
@@ -85,6 +127,33 @@
         100% {
             opacity: 1;
             transform: translateX(0%);
+        }
+    }
+
+    @keyframes slash {
+        0% {
+            -webkit-transform: translate(-50%, -50%) rotate(24deg) scaleY(0);
+            transform: translate(-50%, -50%) rotate(-90deg) scaleY(0);
+        }
+
+        6% {
+            -webkit-transform: translate(-50%, -50%) rotate(24deg) scaleY(0);
+            transform: translate(-50%, -50%) rotate(-45deg) scaleY(0);
+        }
+
+        13% {
+            -webkit-transform: translate(-50%, -50%) rotate(24deg) scaleY(0);
+            transform: translate(-50%, -50%) rotate(0deg) scaleY(0);
+        }
+
+        25% {
+            -webkit-transform: translate(-50%, -50%) rotate(24deg) scaleY(1);
+            transform: translate(-50%, -50%) rotate(24deg) scaleY(0.8);
+        }
+
+        100% {
+            -webkit-transform: translate(-50%, -50%) rotate(24deg) scaleY(1);
+            transform: translate(-50%, -50%) rotate(24deg) scaleY(1);
         }
     }
 }

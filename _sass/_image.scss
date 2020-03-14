@@ -1,0 +1,11 @@
+.circular-image{
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    overflow:hidden;
+    margin: 0 auto;
+
+    img{
+        width: 200px;
+    }
+}
