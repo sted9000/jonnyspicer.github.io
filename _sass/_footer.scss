@@ -1,9 +1,10 @@
 footer{
   text-align: center;
   padding: 20px;
-  background-color: $color_dark_blue;
+  background-color: $color_grey_light;
   color: $color_white;
   font-size: 12px;
+  // border-top: solid 1px $color_grey_medium;
 
   a{
     color: $color_white;
